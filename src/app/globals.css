@@ -1,0 +1,229 @@
+/* Updated: 2025-09-27T11:46:31.239Z */
+/* Updated: 2025-09-27T01:46:24.694Z */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;700&family=Inter:wght@400;700&display=swap');
+
+@import "tailwindcss";
+@import "tw-animate-css";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #ffffff;
+  --color-foreground: #0a0a0a;
+
+  --color-card: #ffffff;
+  --color-card-foreground: #0a0a0a;
+
+  --color-popover: #ffffff;
+  --color-popover-foreground: #0a0a0a;
+
+  --color-primary: #171717;
+  --color-primary-foreground: #fafafa;
+
+  --color-secondary: #f5f5f5;
+  --color-secondary-foreground: #171717;
+
+  --color-muted: #f5f5f5;
+  --color-muted-foreground: #737373;
+
+  --color-accent: #f5f5f5;
+  --color-accent-foreground: #171717;
+
+  --color-destructive: #ef4444;
+  --color-destructive-foreground: #fafafa;
+
+  --color-border: #e5e5e5;
+  --color-input: #e5e5e5;
+  --color-ring: #0a0a0a;
+
+  --color-chart-1: #e67e22;
+  --color-chart-2: #2d8659;
+  --color-chart-3: #1e3a5f;
+  --color-chart-4: #f1c40f;
+  --color-chart-5: #e74c3c;
+
+  --color-sidebar: #f7f7f7;
+  --color-sidebar-foreground: #404040;
+  --color-sidebar-primary: #1a1a1a;
+  --color-sidebar-primary-foreground: #fafafa;
+  --color-sidebar-accent: #f0f0f0;
+  --color-sidebar-accent-foreground: #1a1a1a;
+  --color-sidebar-border: #d4d4d8;
+  --color-sidebar-ring: #3b82f6;
+
+  --radius-lg: 0rem;
+  --radius-md: 0rem;
+  --radius-sm: 0rem;
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+
+  /* Moooi specific colors */
+  --color-primary-black: #000000;
+  --color-primary-white: #FFFFFF;
+  --color-warm-beige: #E8D5C4;
+  --color-warm-brown: #8B6F58;
+  --color-dark-charcoal: #2C2C2C;
+  --color-muted-plum: #6B5B6F;
+  --color-light-cream: #F5F2ED;
+  --color-terracotta: #C17B63;
+
+  /* Moooi specific typography */
+  --font-display: "SangBleu Sans Regular", sans-serif;
+  --font-body: "SangBleu Sans Regular", sans-serif;
+}
+
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: #e5e5e5;
+  }
+}
+
+@layer utilities {
+  body {
+    font-family: var(--font-body);
+  }
+  .font-body { font-family: var(--font-body); }
+  .font-display { font-family: var(--font-display); }
+}
+
+@layer base {
+  :root {
+    --background: var(--color-primary-white);
+    --foreground: var(--color-primary-black);
+    --card: var(--color-primary-white);
+    --card-foreground: var(--color-primary-black);
+    --popover: var(--color-primary-white);
+    --popover-foreground: var(--color-primary-black);
+    --primary: var(--color-primary-black);
+    --primary-foreground: var(--color-primary-white);
+    --secondary: var(--color-warm-beige);
+    --secondary-foreground: var(--color-primary-black);
+    --muted: var(--color-light-cream);
+    --muted-foreground: var(--color-warm-brown);
+    --accent: var(--color-muted-plum);
+    --accent-foreground: var(--color-primary-white);
+    --destructive: var(--color-terracotta);
+    --destructive-foreground: var(--color-primary-white);
+    --border: rgba(0,0,0,0.1);
+    --input: var(--color-primary-black);
+    --ring: var(--color-primary-black);
+    --chart-1: #e67e22;
+    --chart-2: #2d8659;
+    --chart-3: #1e3a5f;
+    --chart-4: #f1c40f;
+    --chart-5: #e74c3c;
+    --radius: 0rem;
+    --sidebar-background: var(--color-primary-black);
+    --sidebar-foreground: var(--color-primary-white);
+    --sidebar-primary: var(--color-primary-black);
+    --sidebar-primary-foreground: var(--color-primary-white);
+    --sidebar-accent: var(--color-dark-charcoal);
+    --sidebar-accent-foreground: var(--color-primary-white);
+    --sidebar-border: rgba(0,0,0,0.1);
+    --sidebar-ring: var(--color-primary-black);
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+
+  h1 {
+    font-family: var(--font-display);
+    font-size: 64px;
+    line-height: 72px;
+    font-weight: 400;
+    letter-spacing: -0.02em;
+  }
+
+  h2 {
+    font-family: var(--font-display);
+    font-size: 48px;
+    line-height: 56px;
+    font-weight: 400;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+  }
+
+  .text-body-large {
+    font-size: 18px;
+    line-height: 28px;
+    font-weight: 400;
+  }
+
+  .text-small-label {
+    font-size: 12px;
+    line-height: 16px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  .text-navigation {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .text-button {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+  }
+
+  .container {
+    max-width: 1440px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 80px;
+    padding-right: 80px;
+  }
+
+  @media (max-width: 768px) {
+    .container {
+      padding-left: 24px;
+      padding-right: 24px;
+    }
+  }
+}
+
+/* Hide Next.js error overlay portal */
+nextjs-portal {
+  display: none !important;
+}
