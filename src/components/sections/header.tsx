@@ -106,7 +106,7 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector }) => {
       )}
 
       {/* Main Header */}
-      <header role="banner" id="header" className="fixed top-0 left-0 right-0 z-40 bg-transparent text-white transition-transform duration-300">
+      <header role="banner" id="header" className="fixed top-0 left-0 right-0 z-[9999] bg-black/70 backdrop-blur-sm text-white transition-transform duration-300">
         <div className="mx-auto h-20 px-6 lg:px-[80px]">
           <div className="relative flex h-full items-center justify-between">
             {/* Left Actions */}

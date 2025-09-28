@@ -21,13 +21,16 @@ export const HomeClient: React.FC = () => {
   // GSAP ScrollSmoother + hide-on-scroll header
   React.useEffect(() => {
     let smoother: any;
-    let ctx: any;
+    let removeScroll: (() => void) | undefined;
 
     const setup = async () => {
       if (typeof window === "undefined") return;
       const { gsap } = await import("gsap");
-      const { ScrollTrigger } = await import("gsap/ScrollTrigger");
-      gsap.registerPlugin(ScrollTrigger);
+      // Keep ScrollTrigger registration optional for future use
+      try {
+        const { ScrollTrigger } = await import("gsap/ScrollTrigger");
+        gsap.registerPlugin(ScrollTrigger);
+      } catch {}
       try {
         const { ScrollSmoother } = await import("gsap/ScrollSmoother");
         gsap.registerPlugin(ScrollSmoother);
@@ -43,61 +46,91 @@ export const HomeClient: React.FC = () => {
         document.documentElement.style.scrollBehavior = "smooth";
       }
 
-      // hide on scroll down, show on scroll up
+      // hide on scroll down, show on scroll up (robust without relying on ScrollTrigger)
       const header = document.getElementById("header");
       if (!header) return;
       const height = header.offsetHeight;
-      ctx = ScrollTrigger.create({
-        start: 0,
-        end: () => document.body.scrollHeight - window.innerHeight,
-        onUpdate: (self) => {
-          const headerEl = header as HTMLElement;
-          // Always show header at very top
-          if (self.progress <= 0.001) {
-            gsap.to(headerEl, { y: 0, duration: 0.3, ease: "power2.out" });
-            headerEl.style.willChange = "auto";
-            return;
-          }
-          const dir = self.direction; // 1 down, -1 up
-          if (dir === 1) {
-            // down
-            headerEl.style.willChange = "transform";
-            gsap.to(headerEl, { y: -height, duration: 0.35, ease: "power2.out" });
-          } else {
-            gsap.to(headerEl, { y: 0, duration: 0.35, ease: "power2.out", onComplete: () => {
-              headerEl.style.willChange = "auto";
-            }});
-          }
-        },
-      });
+      gsap.set(header, { y: 0 });
+
+      let lastY = window.scrollY;
+      let ticking = false;
+      const HIDE_THRESHOLD = 100; // only allow hide after passing this
+      const DELTA_THRESHOLD = 8; // ignore micro scrolls
+
+      const onScroll = () => {
+        const y = window.scrollY;
+        if (!ticking) {
+          window.requestAnimationFrame(() => {
+            const delta = y - lastY;
+            // Always show header near the very top
+            if (y <= 10) {
+              gsap.to(header, { y: 0, duration: 0.3, ease: "power2.out" });
+              lastY = y;
+              ticking = false;
+              return;
+            }
+
+            if (Math.abs(delta) < DELTA_THRESHOLD) {
+              lastY = y;
+              ticking = false;
+              return;
+            }
+
+            if (y > lastY && y > HIDE_THRESHOLD) {
+              // scrolling down beyond threshold -> hide
+              gsap.to(header, { y: -height, duration: 0.35, ease: "power2.out" });
+            } else if (y < lastY) {
+              // scrolling up -> show
+              gsap.to(header, { y: 0, duration: 0.35, ease: "power2.out" });
+            }
+
+            lastY = y;
+            ticking = false;
+          });
+          ticking = true;
+        }
+      };
+      window.addEventListener("scroll", onScroll, { passive: true });
+      removeScroll = () => window.removeEventListener("scroll", onScroll);
+
+      // Ensure header visible on resize/refresh
+      const onResize = () => gsap.set(header, { y: 0 });
+      window.addEventListener("resize", onResize);
+      const prevRemove = removeScroll;
+      removeScroll = () => {
+        prevRemove && prevRemove();
+        window.removeEventListener("resize", onResize);
+      };
     };
 
     setup();
     return () => {
-      if (ctx && typeof ctx.kill === "function") ctx.kill();
+      if (removeScroll) removeScroll();
       if (smoother && typeof smoother.kill === "function") smoother.kill();
     };
   }, []);
 
   return (
-    <div id="smooth-wrapper" className="overflow-hidden">
-      <div id="smooth-content">
-        <Header onOpenCountrySelector={() => setIsCountryOpen(true)} />
-        <main className="pt-20 lg:pt-[88px]">
-          <CeramicSurfacesHero />
-          <ProductCategories />
-          <HarvestedComfort />
-          <AuraLuminora />
-          <DressToImpress />
-          <HayDay />
-          <MeditationMotion />
-          <OdeToTimber />
-          <LivingPebble />
-        </main>
-        <Footer />
-        <CountrySelectorModal isOpen={isCountryOpen} onClose={() => setIsCountryOpen(false)} />
+    <>
+      <Header onOpenCountrySelector={() => setIsCountryOpen(true)} />
+      <div id="smooth-wrapper" className="overflow-hidden">
+        <div id="smooth-content">
+          <main>
+            <CeramicSurfacesHero />
+            <ProductCategories />
+            <HarvestedComfort />
+            <AuraLuminora />
+            <DressToImpress />
+            <HayDay />
+            <MeditationMotion />
+            <OdeToTimber />
+            <LivingPebble />
+          </main>
+          <Footer />
+          <CountrySelectorModal isOpen={isCountryOpen} onClose={() => setIsCountryOpen(false)} />
+        </div>
       </div>
-    </div>
+    </>
   );
 };
 
