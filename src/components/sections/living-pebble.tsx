@@ -2,10 +2,10 @@ import Image from "next/image";
 
 const LivingPebble = () => {
   return (
-    <section>
-      <div className="flex flex-col md:flex-row-reverse">
+    <section className="min-h-screen">
+      <div className="flex flex-col md:flex-row-reverse h-full">
         {/* Right Column: Image */}
-        <div className="relative w-full md:w-1/2 aspect-[1460/1476] md:aspect-auto bg-warm-beige">
+        <div className="relative w-full md:w-1/2 h-[50vh] md:h-auto md:min-h-screen bg-warm-beige">
           <Image
             src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-536241-Moooi_The_Living_Pebble.jpg"
             alt="A minimalist interior showing the Living Pebble light fixture on a beige wall."
@@ -15,7 +15,7 @@ const LivingPebble = () => {
         </div>
 
         {/* Left Column: Text Content */}
-        <div className="w-full md:w-1/2 bg-light-cream flex items-center justify-center">
+        <div className="w-full md:w-1/2 bg-light-cream flex items-center justify-center h-[50vh] md:h-auto md:min-h-screen">
           <div className="py-20 px-6 sm:py-24 lg:py-32 xl:py-48">
             <a href="/en/story/beta-living-pebble" className="block text-center text-primary-black">
               <div className="flex flex-col-reverse items-center mb-6">

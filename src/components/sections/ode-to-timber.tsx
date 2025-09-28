@@ -3,8 +3,8 @@ import Link from "next/link";
 
 const OdeToTimber = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background">
-      <div className="relative w-full h-[60vh] lg:h-auto">
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background min-h-screen">
+      <div className="relative w-full h-[50vh] lg:h-full lg:order-2">
         <Image
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-746911-Graphite Ash Dark_394x394_250226-Pat_300dpi.png"
           alt="An Ode to Timber"
@@ -12,7 +12,7 @@ const OdeToTimber = () => {
           className="object-cover"
         />
       </div>
-      <div className="bg-[#393D46] text-primary-white flex items-center justify-center">
+      <div className="bg-[#393D46] text-primary-white flex items-center justify-center lg:order-1 h-full">
         <Link href="/en/product/timber-tones-carpet" className="block w-full h-full">
           <div className="flex flex-col items-center justify-center text-center h-full max-w-lg mx-auto py-20 px-6 lg:py-30 lg:px-20">
             <div className="font-body text-xs uppercase tracking-[0.08em] font-normal mb-6">

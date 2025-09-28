@@ -3,8 +3,8 @@ import Link from 'next/link';
 
 const DressToImpress = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground">
-      <div className="relative w-full min-h-[50vh] lg:min-h-0 order-1 lg:order-1">
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground min-h-screen">
+      <div className="relative w-full h-[50vh] lg:h-full order-1 lg:order-1">
         <Image
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-663428-MOOOI_DrapeLight_Applied_03_Dining.jpg"
           alt="Dress to Impress"
@@ -12,7 +12,7 @@ const DressToImpress = () => {
           className="object-cover"
         />
       </div>
-      <div className="bg-secondary text-secondary-foreground flex items-center justify-center order-2 lg:order-2">
+      <div className="bg-secondary text-secondary-foreground flex items-center justify-center order-2 lg:order-2 h-full">
         <Link
           href="/en/product/drape-light-78-drape-light"
           className="flex flex-col items-center justify-center text-center p-12 md:p-24 w-full h-full"

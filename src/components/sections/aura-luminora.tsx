@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const AuraLuminora = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground">
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground min-h-screen">
       {/* Image Panel - Right side on desktop */}
-      <div className="relative lg:order-2 min-h-[60vh] lg:min-h-[auto] lg:h-auto">
+      <div className="relative lg:order-2 h-[50vh] lg:h-full">
         <Image
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-663305-02 Jana - Sand_3.jpg"
           alt="The Aura of Luminora"
@@ -15,7 +15,7 @@ const AuraLuminora = () => {
       </div>
 
       {/* Text Panel - Left side on desktop */}
-      <div className="lg:order-1 flex items-center justify-center bg-accent text-primary-white py-24 px-6 sm:py-32 sm:px-20">
+      <div className="lg:order-1 flex items-center justify-center bg-[#4c363a] text-primary-white h-full px-6 sm:px-20 py-16 sm:py-20">
         <Link href="/en/product/luminora-light" className="flex flex-col items-center text-center max-w-md">
           <div className="flex flex-col-reverse items-center mb-8">
             <h1 className="font-display text-5xl lg:text-[64px] leading-tight lg:leading-[72px] font-normal -tracking-[0.02em]">
