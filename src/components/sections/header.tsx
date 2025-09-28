@@ -106,17 +106,17 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector }) => {
       )}
 
       {/* Main Header */}
-      <header role="banner" id="header" className="fixed top-0 left-0 right-0 z-[9999] bg-black/70 backdrop-blur-sm text-white transition-transform duration-300">
+      <header role="banner" id="header" className="fixed top-0 left-0 right-0 z-[9999] bg-transparent text-white transition-transform duration-300">
         <div className="mx-auto h-20 px-6 lg:px-[80px]">
           <div className="relative flex h-full items-center justify-between">
             {/* Left Actions */}
-            <div className="flex items-center gap-x-8 text-navigation">
+            <div className="flex items-center gap-x-9 text-navigation text-[15px]">
               <button className="flex items-center gap-x-2.5">
-                <MenuIcon className="h-4 w-4" />
+                <MenuIcon className="h-[14px] w-[14px]" />
                 <span className="hidden lg:inline">Menu</span>
               </button>
               <button className="flex items-center gap-x-2.5">
-                <SearchIcon className="h-4 w-4" />
+                <SearchIcon className="h-[14px] w-[14px]" />
                 <span className="hidden lg:inline">Search</span>
               </button>
             </div>
@@ -127,19 +127,19 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector }) => {
             </Link>
 
             {/* Right Actions */}
-            <div className="flex items-center gap-x-8 text-navigation">
+            <div className="flex items-center gap-x-9 text-navigation text-[15px]">
               <button className="flex items-center gap-x-1.5" onClick={onOpenCountrySelector}>
                 <span>EN</span>
-                <ChevronDownIcon className="h-2 w-2" />
+                <ChevronDownIcon className="h-[10px] w-[10px]" />
               </button>
               <button aria-label="Account">
-                <UserIcon className="h-4 w-4" />
+                <UserIcon className="h-[14px] w-[14px]" />
               </button>
               <button aria-label="Mood boards">
-                <HeartIcon className="h-4 w-4" />
+                <HeartIcon className="h-[14px] w-[14px]" />
               </button>
               <Link href="/en/bag" aria-label="Empty shopping bag">
-                  <ShoppingBagIcon className="h-4 w-4" />
+                  <ShoppingBagIcon className="h-[14px] w-[14px]" />
               </Link>
             </div>
           </div>
