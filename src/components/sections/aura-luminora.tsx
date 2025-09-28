@@ -10,8 +10,8 @@ const AuraLuminora = () => {
           src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-663305-02 Jana - Sand_3.jpg"
           alt="The Aura of Luminora"
           fill
-          className="object-cover w-full h-full"
-        />
+          className="object-cover w-full h-full" />
+
       </div>
 
       {/* Text Panel - Left side on desktop */}
@@ -33,8 +33,8 @@ const AuraLuminora = () => {
           </span>
         </Link>
       </div>
-    </section>
-  );
+    </section>);
+
 };
 
 export default AuraLuminora;

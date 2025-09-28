@@ -10,9 +10,9 @@ type IconProps = React.SVGProps<SVGSVGElement>;
 const MenuIcon = (props: IconProps) => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g>
-      <line y1="3.5" x2="16" y2="3.5" stroke="currentColor" strokeWidth="1"></line>
-      <line y1="8.5" x2="16" y2="8.5" stroke="currentColor" strokeWidth="1"></line>
-      <line y1="13.5" x2="16" y2="13.5" stroke="currentColor" strokeWidth="1"></line>
+      <line y1="3.5" x2="16" y2="3.5" stroke="currentColor" strokeWidth="1.5"></line>
+      <line y1="8.5" x2="16" y2="8.5" stroke="currentColor" strokeWidth="1.5"></line>
+      <line y1="13.5" x2="16" y2="13.5" stroke="currentColor" strokeWidth="1.5"></line>
     </g>
   </svg>
 );
@@ -20,8 +20,8 @@ const MenuIcon = (props: IconProps) => (
 const SearchIcon = (props: IconProps) => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g>
-      <path d="M15.5 15.5L11.5 11.5" stroke="currentColor" strokeWidth="1"></path>
-      <circle cx="7" cy="7" r="6.5" stroke="currentColor" strokeWidth="1"></circle>
+      <path d="M15.5 15.5L11.5 11.5" stroke="currentColor" strokeWidth="1.5"></path>
+      <circle cx="7" cy="7" r="6.5" stroke="currentColor" strokeWidth="1.5"></circle>
     </g>
   </svg>
 );
@@ -45,30 +45,30 @@ const MoooiLogo = (props: IconProps) => (
 const UserIcon = (props: IconProps) => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
     <g>
-      <path d="M1,15.5 C1,13.5 3.5,12.5 8,12.5 C12.5,12.5 15,13.5 15,15.5" stroke="currentColor" strokeWidth="1" />
-      <path d="M8,9.5 C10,9.5 11.5,8 11.5,6 C11.5,4 10,2.5 8,2.5 C6,2.5 4.5,4 4.5,6 C4.5,8 6,9.5 8,9.5 Z" stroke="currentColor" strokeWidth="1"/>
+      <path d="M1,15.5 C1,13.5 3.5,12.5 8,12.5 C12.5,12.5 15,13.5 15,15.5" stroke="currentColor" strokeWidth="1.5" />
+      <path d="M8,9.5 C10,9.5 11.5,8 11.5,6 C11.5,4 10,2.5 8,2.5 C6,2.5 4.5,4 4.5,6 C4.5,8 6,9.5 8,9.5 Z" stroke="currentColor" strokeWidth="1.5"/>
     </g>
   </svg>
 );
 
 const HeartIcon = (props: IconProps) => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-    <path d="M2.57143 8.5L8 14.5L13.4286 8.5C14.7143 7 14.7143 5.4 13.4286 4C12.1429 2.6 10.2857 2.6 9.14286 4L8 5.5L6.85714 4C5.71429 2.6 3.85714 2.6 2.57143 4C1.28571 5.4 1.28571 7 2.57143 8.5Z" stroke="currentColor" strokeWidth="1"/>
+    <path d="M2.57143 8.5L8 14.5L13.4286 8.5C14.7143 7 14.7143 5.4 13.4286 4C12.1429 2.6 10.2857 2.6 9.14286 4L8 5.5L6.85714 4C5.71429 2.6 3.85714 2.6 2.57143 4C1.28571 5.4 1.28571 7 2.57143 8.5Z" stroke="currentColor" strokeWidth="1.5"/>
   </svg>
 );
 
 const ShoppingBagIcon = (props: IconProps) => (
   <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"  {...props}>
     <g>
-      <path d="M14.5 5.5V14.5H1.5V5.5" stroke="currentColor" strokeWidth="1" strokeLinejoin="round"></path>
-      <path d="M11 7.5C11 5.84315 9.65685 4.5 8 4.5C6.34315 4.5 5 5.84315 5 7.5" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round"></path>
+      <path d="M14.5 5.5V14.5H1.5V5.5" stroke="currentColor" strokeWidth="1.5" strokeLinejoin="round"></path>
+      <path d="M11 7.5C11 5.84315 9.65685 4.5 8 4.5C6.34315 4.5 5 5.84315 5 7.5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"></path>
     </g>
   </svg>
 );
 
 const ChevronDownIcon = (props: IconProps) => (
   <svg viewBox="0 0 8 8" fill="none" xmlns="http://www.w3.org/2000/svg" {...props}>
-      <path d="M1 2.5L4 5.5L7 2.5" stroke="currentColor" strokeWidth="1"></path>
+      <path d="M1 2.5L4 5.5L7 2.5" stroke="currentColor" strokeWidth="1.5"></path>
   </svg>
 );
 
@@ -112,11 +112,11 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector }) => {
             {/* Left Actions */}
             <div className="flex items-center gap-x-9 text-navigation text-[15px]">
               <button className="flex items-center gap-x-2.5">
-                <MenuIcon className="h-[14px] w-[14px]" />
+                <MenuIcon className="h-[18px] w-[18px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
                 <span className="hidden lg:inline">Menu</span>
               </button>
               <button className="flex items-center gap-x-2.5">
-                <SearchIcon className="h-[14px] w-[14px]" />
+                <SearchIcon className="h-[18px] w-[18px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
                 <span className="hidden lg:inline">Search</span>
               </button>
             </div>
@@ -130,16 +130,16 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector }) => {
             <div className="flex items-center gap-x-9 text-navigation text-[15px]">
               <button className="flex items-center gap-x-1.5" onClick={onOpenCountrySelector}>
                 <span>EN</span>
-                <ChevronDownIcon className="h-[10px] w-[10px]" />
+                <ChevronDownIcon className="h-4 w-4 drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
               </button>
               <button aria-label="Account">
-                <UserIcon className="h-[14px] w-[14px]" />
+                <UserIcon className="h-[18px] w-[18px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
               </button>
               <button aria-label="Mood boards">
-                <HeartIcon className="h-[14px] w-[14px]" />
+                <HeartIcon className="h-[18px] w-[18px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
               </button>
               <Link href="/en/bag" aria-label="Empty shopping bag">
-                  <ShoppingBagIcon className="h-[14px] w-[14px]" />
+                  <ShoppingBagIcon className="h-[18px] w-[18px] drop-shadow-[0_1px_1px_rgba(0,0,0,0.8)]" />
               </Link>
             </div>
           </div>
