@@ -89,11 +89,11 @@ const SpaceJourneyVideo = () => {
 
       <div className="relative z-10 flex flex-col items-center justify-center p-6 text-center md:p-12">
         <Link
-          href="/en/story/haybale-lounge-chair"
+          href="/missions"
           className="flex flex-col items-center"
         >
           <div className="flex flex-col items-center">
-            <p className="text-small-label">Product story</p>
+            <p className="text-small-label">SPACE EXPLORATION</p>
             <h1
               className="mt-6 font-display text-[42px] leading-[48px] md:text-[58px] md:leading-[72px] font-normal tracking-[-0.02em]"
               role="text"
@@ -102,13 +102,11 @@ const SpaceJourneyVideo = () => {
             </h1>
           </div>
           <p className="text-body-large mt-6 max-w-[55ch] md:mt-6">
-            A bold reinterpretation of rural nostalgia, the Haybale Lounge Chair
-            with Footstool transforms stacked hay bales into a sculptural
-            statement of comfort.
+            From the first steps on the Moon to the exploration of Mars, humanity's quest to reach the stars continues. Discover the missions that push the boundaries of what's possible and inspire us to dream beyond our world.
           </p>
           <div className="mt-12">
             <span className="inline-block rounded-full border border-white px-10 py-4 text-base font-normal text-white transition-colors duration-300 hover:bg-white hover:text-black">
-              Discover the new Haybale Lounge Chair
+              Explore Space Missions
             </span>
           </div>
         </Link>
