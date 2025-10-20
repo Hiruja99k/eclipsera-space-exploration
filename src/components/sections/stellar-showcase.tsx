@@ -7,14 +7,14 @@ const StellarShowcase = () => {
       <div className="relative w-full h-[50vh] lg:h-full order-1 lg:order-1">
         <Image
           src="/images/Lucid_Origin_a_highly_detailed_cinematic_photo_of_a_vibrant_ga_2.jpg"
-          alt="Dress to Impress"
+          alt="Cosmic Fabric - Vibrant Galaxy"
           fill
           className="object-cover"
         />
       </div>
       <div className="bg-secondary text-secondary-foreground flex items-center justify-center order-2 lg:order-2 h-full">
         <Link
-          href="/en/product/drape-light-78-drape-light"
+          href="/missions"
           className="flex flex-col items-center justify-center text-center p-12 md:p-24 w-full h-full"
         >
           <div className="flex flex-col-reverse items-center">

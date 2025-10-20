@@ -16,7 +16,7 @@ const CosmicExploration = () => {
 
       {/* Text Panel - Left side on desktop */}
       <div className="lg:order-1 flex items-center justify-center bg-[#4c363a] text-primary-white h-full px-6 sm:px-20 py-16 sm:py-20">
-        <Link href="/en/product/luminora-light" className="flex flex-col items-center text-center max-w-md">
+        <Link href="/ecosystem" className="flex flex-col items-center text-center max-w-md">
           <div className="flex flex-col-reverse items-center mb-8">
             <h1 className="font-display text-5xl lg:text-[64px] leading-tight lg:leading-[72px] font-normal -tracking-[0.02em]">
              The Embrace of Cosmos

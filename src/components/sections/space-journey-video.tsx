@@ -82,7 +82,7 @@ const SpaceJourneyVideo = () => {
           loop
           playsInline
           preload="metadata"
-          poster="/images/space-poster.jpg"
+
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>

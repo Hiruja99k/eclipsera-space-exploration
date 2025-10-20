@@ -17,13 +17,13 @@ const OrbitalPerspective = () => {
         {/* Left Column: Text Content */}
         <div className="w-full md:w-1/2 bg-light-cream flex items-center justify-center h-[50vh] md:h-full">
           <div className="py-20 px-6 sm:py-24 lg:py-32 xl:py-48 box-border">
-            <a href="/en/story/beta-living-pebble" className="block text-center text-primary-black">
+            <a href="/missions" className="block text-center text-primary-black">
               <div className="flex flex-col-reverse items-center mb-6">
                 <h2 className="font-display text-[48px] leading-[56px] text-center">
                 Eclipsera unveils the<br />Martian Frontier
                 </h2>
                 <p className="text-small-label uppercase text-warm-brown tracking-[0.08em] mb-4">
-                  Product story
+                  SPACE EXPLORATION
                 </p>
               </div>
               <p className="text-body-large max-w-sm mx-auto mb-8">

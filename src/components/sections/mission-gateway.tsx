@@ -6,7 +6,7 @@ const MissionGateway = () => {
     <section className="bg-[#2C2C2C] text-primary-white h-screen flex flex-col lg:flex-row">
       <div className="flex lg:w-1/2 items-center justify-center h-[50vh] lg:h-full px-6 sm:px-12 md:px-20">
         <Link
-          href="/en/product/organic-sequences-carpet"
+          href="/missions"
           className="flex flex-col items-center justify-center text-center w-full max-w-md h-full"
         >
           <div className="flex flex-col-reverse mb-6">

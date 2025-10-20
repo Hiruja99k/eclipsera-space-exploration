@@ -13,7 +13,7 @@ const CelestialVista = () => {
         />
       </div>
       <div className="bg-[#393D46] text-primary-white flex items-center justify-center lg:order-2 h-full">
-        <Link href="/en/product/timber-tones-carpet" className="block w-full h-full">
+        <Link href="/ecosystem" className="block w-full h-full">
           <div className="flex flex-col items-center justify-center text-center h-full box-border max-w-lg mx-auto py-20 px-6 lg:py-28 lg:px-20">
             <div className="font-body text-xs uppercase tracking-[0.08em] font-normal mb-6">
               ECLIPSERA PRESENTS
@@ -22,11 +22,11 @@ const CelestialVista = () => {
             An Orbit of Worlds
             </h1>
             <p className="font-body text-lg leading-7 mt-8 max-w-md">
-              Inspired by traditional woodworking techniques, the Timber Tones Carpets Collection transforms the warmth and artistry of timber into a stunning textile experience.
+              Three stars locked in an eternal dance, their gravitational embrace creating a celestial ballet of light and shadow across the cosmic stage.
             </p>
             <div className="mt-12">
               <span className="font-body text-base leading-5 border-b border-primary-white pb-1">
-                Discover the new collection
+                Explore the Ecosystem
               </span>
             </div>
           </div>

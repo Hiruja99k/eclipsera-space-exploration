@@ -26,7 +26,7 @@ export default function RootLayout({
           data-message-type="ROUTE_CHANGE"
           data-include-search-params="true"
           data-only-in-iframe="true"
-          data-debug="true"
+          data-debug="false"
           data-custom-data='{"appName": "YourApp", "version": "1.0.0", "greeting": "hi"}'
         />
         <RouteTransition>

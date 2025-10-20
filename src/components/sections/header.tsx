@@ -167,9 +167,9 @@ const Header: React.FC<HeaderProps> = ({ onOpenCountrySelector, appearance = "da
       {/* Promotional Banner */}
       {isPromoVisible && (
         <div className="relative flex items-center justify-center bg-[#3a2e25] text-white/90">
-          <Link href="/en/collection" className="text-center text-xs tracking-wider py-3 px-10 group">
+          <Link href="/missions" className="text-center text-xs tracking-wider py-3 px-10 group">
             <span className="border-b border-transparent group-hover:border-white/90 transition-colors duration-300 pb-px">
-              DISCOVER OUR LIGHTING AND FURNITURE COLLECTION TODAY!
+              DISCOVER SPACE MISSIONS AND EXPLORATION TODAY!
             </span>
           </Link>
           <button

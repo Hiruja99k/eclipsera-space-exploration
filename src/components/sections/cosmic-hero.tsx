@@ -18,7 +18,7 @@ const CosmicHero = () => {
 
       <div className="relative z-10 h-full flex items-center justify-center px-6 lg:px-[80px]">
         <Link
-          href="/en/story/moooi-ceramic-surfaces"
+          href="/missions"
           className="flex flex-col items-center text-center text-primary-white"
         >
           <div className="flex flex-col-reverse items-center">
