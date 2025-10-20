@@ -1,0 +1,54 @@
+import Image from "next/image";
+import Link from "next/link";
+
+interface EmbraceProps {
+  title?: string;
+  label?: string;
+  description?: string;
+  ctaText?: string;
+  href?: string;
+  imageSrc?: string;
+  imageAlt?: string;
+  panelBgClass?: string; // background color of text panel
+}
+
+// Independent duplicate of AuraLuminora for Ecosystem page
+const EmbraceCosmos: React.FC<EmbraceProps> = ({
+  title = "The Embrace of Cosmos",
+  label = "ECLIPSERA PRESENTS",
+  description = "A cosmic phenomenon where spacetime bends into a point, uniting immense gravity and boundless mystery.",
+  ctaText = "Explore Information",
+  href = "#",
+  imageSrc = "/images/Lucid_Origin_a_cinematic_photo_of_A_supermassive_black_hole_at_0.jpg",
+  imageAlt = "The Aura of Luminora",
+  panelBgClass = "bg-[#4c363a]",
+}) => {
+  return (
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground h-screen">
+      {/* Image Panel - Right side on desktop */}
+      <div className="relative lg:order-2 h-[50vh] lg:h-full">
+        <Image
+          src={imageSrc}
+          alt={imageAlt}
+          fill
+          className="object-cover w-full h-full" />
+
+      </div>
+
+      {/* Text Panel - Left side on desktop */}
+      <div className={`lg:order-1 flex items-center justify-center ${panelBgClass} text-primary-white h-full px-6 sm:px-20 py-16 sm:py-20`}>
+        <Link href={href} className="flex flex-col items-center text-center max-w-md">
+          <div className="flex flex-col-reverse items-center mb-8">
+            <h1 className="font-display text-5xl lg:text-[64px] leading-tight lg:leading-[72px] font-normal -tracking-[0.02em]">{title}</h1>
+            <div className="text-xs font-normal leading-4 uppercase tracking-[0.08em] mb-4">{label}</div>
+          </div>
+          <p className="text-lg leading-7 font-normal mb-12">{description}</p>
+          <span className="text-base leading-5 font-normal border-b border-primary-white pb-1">{ctaText}</span>
+        </Link>
+      </div>
+    </section>);
+};
+
+export default EmbraceCosmos;
+
+

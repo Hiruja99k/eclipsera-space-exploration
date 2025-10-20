@@ -4,30 +4,13 @@ import React from "react";
 import Link from "next/link";
 import {
   ArrowUp,
-  ChevronDown,
   Instagram,
   Linkedin,
   Facebook,
+  Twitter,
 } from "lucide-react";
 
-const SpotifyIcon = (props: React.SVGProps<SVGSVGElement>) => (
-  <svg
-    width="24"
-    height="24"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    strokeWidth="1.5"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <circle cx="12" cy="12" r="10" />
-    <path d="M7.4 15.6c1.4-1.4 3.4-.8 5.6.8" />
-    <path d="M6.3 12.3c1.8-1.2 4.5-.9 7.2 1" />
-    <path d="M5.4 9.3c2.2-1 5.6-.9 8.8 1.1" />
-  </svg>
-);
+// Replace Spotify with Twitter in social links
 
 const PinterestIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
@@ -72,48 +55,82 @@ const Footer = () => {
   };
 
   const mainLinks1 = [
-    { href: "/en/store-locator", label: "Store locator" },
-    { href: "/en/material-library", label: "Material Library" },
-    { href: "/en/shipping-returns", label: "Shipping & Returns" },
-    { href: "/en/faq", label: "FAQ" },
+    { href: "/missions", label: "Space Missions" },
+    { href: "/about", label: "About Eclipsera" },
+    { href: "/ecosystem", label: "Ecosystem" },
+    { href: "https://science.nasa.gov/mission/webb/multimedia/images/", label: "Gallery", isExternal: true },
   ];
 
   const mainLinks2 = [
-    { href: "/en/newsletter_signup", label: "Newsletter" },
-    { href: "https://press.moooi.com/", label: "Press Area", isExternal: true },
-    { href: "/en/jobs", label: "Jobs" },
+    { href: "https://aspect.bccs.lk/", label: "ASPECT 2025", isExternal: true },
+    { href: "https://www.bccs.lk/", label: "BCCS", isExternal: true },
+    { href: "https://stars.chromeexperiments.com/", label: "Chrome Stars", isExternal: true },
   ];
 
   const socialLinks = [
     {
-      href: "https://pinterest.com/moooi/",
-      icon: PinterestIcon,
-      label: "Pinterest",
+      href: "https://www.nasa.gov/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z"/>
+        </svg>
+      ),
+      label: "NASA",
     },
     {
-      href: "https://www.instagram.com/moooi/",
-      icon: Instagram,
-      label: "Instagram",
+      href: "https://www.spacex.com/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+        </svg>
+      ),
+      label: "SpaceX",
     },
-    { href: "https://vimeo.com/moooi", icon: VimeoIcon, label: "Vimeo" },
     {
-      href: "https://www.linkedin.com/company/moooi/",
-      icon: Linkedin,
-      label: "LinkedIn",
+      href: "https://www.esa.int/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M8 12h8M12 8v8"/>
+        </svg>
+      ),
+      label: "ESA",
     },
-    { href: "https://www.facebook.com/moooi", icon: Facebook, label: "Facebook" },
     {
-      href: "https://open.spotify.com/user/moooi",
-      icon: SpotifyIcon,
-      label: "Spotify",
+      href: "https://science.nasa.gov/mission/webb/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2l3.09 6.26L22 9l-6.91.74L12 16l-3.09-6.26L2 9l6.91-.74L12 2z"/>
+        </svg>
+      ),
+      label: "Webb Telescope",
+    },
+    {
+      href: "https://www.bccs.lk/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <rect x="3" y="4" width="18" height="12" rx="1"/>
+          <path d="M7 8h10M7 12h6"/>
+        </svg>
+      ),
+      label: "BCCS",
+    },
+    {
+      href: "https://aspect.bccs.lk/",
+      icon: () => (
+        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+          <path d="M12 2L15.5 8.5L22 9L17 14L19 22L12 18L5 22L7 14L2 9L8.5 8.5L12 2Z"/>
+        </svg>
+      ),
+      label: "ASPECT 2025",
     },
   ];
 
   const legalLinks = [
-    { href: "/en/disclaimer", label: "Disclaimer" },
-    { href: "/en/cookie-policy", label: "Cookie Policy" },
-    { href: "/en/general-conditions", label: "General Conditions" },
-    { href: "/en/privacy-statement", label: "Privacy Statement" },
+    { href: "/about", label: "About Project" },
+    { href: "https://aspect.bccs.lk/", label: "Competition", isExternal: true },
+    { href: "https://www.bccs.lk/", label: "Organizer", isExternal: true },
+    { href: "/", label: "Home" },
   ];
 
   return (
@@ -124,17 +141,12 @@ const Footer = () => {
     >
       <div className="max-w-[1440px] mx-auto px-6 md:px-20 pt-20 pb-10">
         <div className="flex justify-between items-center border-b border-white/20 pb-10 mb-10">
-          <button className="border border-white/50 rounded-full px-5 py-3 flex items-center justify-between gap-4 text-left w-auto md:w-[320px] hover:bg-white/10 transition-colors">
-            <span className="flex flex-col">
-              <span className="text-sm leading-tight">
-                My country/region is not listed
-              </span>
-              <span className="text-xs text-gray-400 leading-tight">
-                English
-              </span>
-            </span>
-            <ChevronDown className="w-5 h-5 flex-shrink-0" />
-          </button>
+          <div className="text-white/90">
+            <p className="whitespace-nowrap font-display font-bold text-[24px] leading-none">
+            "The Earth is the cradle of humanity, but mankind cannot stay in the cradle forever."
+            </p>
+            <p className="mt-6 whitespace-nowrap font-display font-semibold text-[16px] leading-none text-white/80">— Konstantin Tsiolkovsky</p>
+          </div>
           <button
             onClick={handleScrollToTop}
             className="border border-white/50 rounded-full w-12 h-12 flex items-center justify-center flex-shrink-0 hover:bg-white/10 transition-colors"
@@ -146,23 +158,23 @@ const Footer = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-y-10 lg:gap-x-20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-y-10 gap-x-8">
-            <div className="flex flex-col items-start gap-y-5">
+            <div className="flex flex-col items-start gap-y-4">
               {mainLinks1.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="font-display text-[34px] leading-[40px] hover:underline"
+                  className="font-display text-[24px] leading-[30px] hover:underline"
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <div className="flex flex-col items-start gap-y-5">
+            <div className="flex flex-col items-start gap-y-4">
               {mainLinks2.map((link) => (
                 <a
                   key={link.href}
                   href={link.href}
-                  className="font-display text-[34px] leading-[40px] hover:underline"
+                  className="font-display text-[24px] leading-[30px] hover:underline"
                   target={link.isExternal ? "_blank" : "_self"}
                   rel={link.isExternal ? "noopener noreferrer" : ""}
                 >
@@ -201,7 +213,7 @@ const Footer = () => {
                   </Link>
                 ))}
               </div>
-              <p className="text-xs text-gray-400">©2025 Moooi</p>
+              <p className="text-xs text-gray-400">©2025 Eclipsera</p>
             </div>
           </div>
         </div>

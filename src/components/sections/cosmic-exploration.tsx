@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const AuraLuminora = () => {
+const CosmicExploration = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground min-h-screen">
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground h-screen">
       {/* Image Panel - Right side on desktop */}
       <div className="relative lg:order-2 h-[50vh] lg:h-full">
         <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-663305-02 Jana - Sand_3.jpg"
+          src="/images/Lucid_Origin_a_cinematic_photo_of_A_supermassive_black_hole_at_0.jpg"
           alt="The Aura of Luminora"
           fill
           className="object-cover w-full h-full" />
@@ -19,17 +19,17 @@ const AuraLuminora = () => {
         <Link href="/en/product/luminora-light" className="flex flex-col items-center text-center max-w-md">
           <div className="flex flex-col-reverse items-center mb-8">
             <h1 className="font-display text-5xl lg:text-[64px] leading-tight lg:leading-[72px] font-normal -tracking-[0.02em]">
-              The Aura of Luminora
+             The Embrace of Cosmos
             </h1>
             <div className="text-xs font-normal leading-4 uppercase tracking-[0.08em] mb-4">
-              MOOOI PRESENTS
+              ECLIPSERA PRESENTS
             </div>
           </div>
           <p className="text-lg leading-7 font-normal mb-12">
-            A luminous suspension lamp, where structure transforms into light, uniting craftsmanship and modernity
+          A cosmic phenomenon where spacetime bends into a point, uniting immense gravity and boundless mystery.
           </p>
           <span className="text-base leading-5 font-normal border-b border-primary-white pb-1">
-            Luminore Light now available
+          Explore Information
           </span>
         </Link>
       </div>
@@ -37,4 +37,4 @@ const AuraLuminora = () => {
 
 };
 
-export default AuraLuminora;
+export default CosmicExploration;

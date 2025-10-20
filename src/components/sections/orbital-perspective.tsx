@@ -1,13 +1,13 @@
 import Image from "next/image";
 
-const LivingPebble = () => {
+const OrbitalPerspective = () => {
   return (
-    <section className="min-h-screen">
+    <section className="h-svh overflow-hidden">
       <div className="flex flex-col md:flex-row-reverse h-full">
         {/* Right Column: Image */}
-        <div className="relative w-full md:w-1/2 h-[50vh] md:h-auto md:min-h-screen bg-warm-beige">
+        <div className="relative w-full md:w-1/2 h-[50vh] md:h-full bg-warm-beige">
           <Image
-            src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-536241-Moooi_The_Living_Pebble.jpg"
+            src="/images/Lucid_Origin_a_cinematic_photo_of_A_realistic_Mars_colony_on_t_3.jpg"
             alt="A minimalist interior showing the Living Pebble light fixture on a beige wall."
             fill
             className="object-cover"
@@ -15,19 +15,19 @@ const LivingPebble = () => {
         </div>
 
         {/* Left Column: Text Content */}
-        <div className="w-full md:w-1/2 bg-light-cream flex items-center justify-center h-[50vh] md:h-auto md:min-h-screen">
-          <div className="py-20 px-6 sm:py-24 lg:py-32 xl:py-48">
+        <div className="w-full md:w-1/2 bg-light-cream flex items-center justify-center h-[50vh] md:h-full">
+          <div className="py-20 px-6 sm:py-24 lg:py-32 xl:py-48 box-border">
             <a href="/en/story/beta-living-pebble" className="block text-center text-primary-black">
               <div className="flex flex-col-reverse items-center mb-6">
                 <h2 className="font-display text-[48px] leading-[56px] text-center">
-                  Moooi introduces the<br />Living Pebble
+                Eclipsera unveils the<br />Martian Frontier
                 </h2>
                 <p className="text-small-label uppercase text-warm-brown tracking-[0.08em] mb-4">
                   Product story
                 </p>
               </div>
               <p className="text-body-large max-w-sm mx-auto mb-8">
-                A first-of-its-kind innovation that transforms lighting into a living work of art.
+              A groundbreaking initiative that transforms exploration into a sustainable human outpost.
               </p>
               <span className="text-button inline-block border-b border-primary-black pb-1">
                 Learn more
@@ -40,4 +40,4 @@ const LivingPebble = () => {
   );
 };
 
-export default LivingPebble;
+export default OrbitalPerspective;

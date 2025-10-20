@@ -28,7 +28,7 @@ const PlayIcon = () => (
   </svg>
 );
 
-const HarvestedComfort = () => {
+const SpaceJourneyVideo = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
@@ -43,6 +43,18 @@ const HarvestedComfort = () => {
         .catch(() => {
           setIsPlaying(false);
         });
+
+      // Handle video trimming - restart 5 seconds before the end
+      const handleTimeUpdate = () => {
+        if (video.duration && video.currentTime >= video.duration - 5) {
+          video.currentTime = 0;
+        }
+      };
+
+      video.addEventListener('timeupdate', handleTimeUpdate);
+      return () => {
+        video.removeEventListener('timeupdate', handleTimeUpdate);
+      };
     }
   }, []);
 
@@ -64,11 +76,13 @@ const HarvestedComfort = () => {
         <video
           ref={videoRef}
           className="h-full w-full object-cover"
-          src="https://cdn.moooi.com/assets/Web-Items/Home/MOOOI_HayBale_Website_NoBumpers_Reduced.mp4"
+          src="/THE-BEAUTY-OF-THE-UNIVERSE.mp4"
           autoPlay
           muted
           loop
           playsInline
+          preload="metadata"
+          poster="/images/space-poster.jpg"
         />
         <div className="absolute inset-0 bg-black/40" />
       </div>
@@ -81,10 +95,10 @@ const HarvestedComfort = () => {
           <div className="flex flex-col items-center">
             <p className="text-small-label">Product story</p>
             <h1
-              className="mt-6 font-display text-[40px] leading-[48px] md:text-[64px] md:leading-[72px] font-normal tracking-[-0.02em]"
+              className="mt-6 font-display text-[42px] leading-[48px] md:text-[58px] md:leading-[72px] font-normal tracking-[-0.02em]"
               role="text"
             >
-              Harvested for Comfort
+              Our Journey Is Among Stars
             </h1>
           </div>
           <p className="text-body-large mt-6 max-w-[55ch] md:mt-6">
@@ -113,4 +127,4 @@ const HarvestedComfort = () => {
   );
 };
 
-export default HarvestedComfort;
+export default SpaceJourneyVideo;

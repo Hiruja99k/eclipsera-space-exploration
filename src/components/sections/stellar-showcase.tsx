@@ -1,12 +1,12 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-const DressToImpress = () => {
+const StellarShowcase = () => {
   return (
-    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground min-h-screen">
+    <section className="grid grid-cols-1 lg:grid-cols-2 bg-background text-foreground h-screen">
       <div className="relative w-full h-[50vh] lg:h-full order-1 lg:order-1">
         <Image
-          src="https://slelguoygbfzlpylpxfs.supabase.co/storage/v1/object/public/test-clones/f421b09e-4055-46ec-9506-437db04f612f-moooi-com/assets/images/next-663428-MOOOI_DrapeLight_Applied_03_Dining.jpg"
+          src="/images/Lucid_Origin_a_highly_detailed_cinematic_photo_of_a_vibrant_ga_2.jpg"
           alt="Dress to Impress"
           fill
           className="object-cover"
@@ -19,20 +19,20 @@ const DressToImpress = () => {
         >
           <div className="flex flex-col-reverse items-center">
             <h2 className="font-display text-[48px] leading-[56px] md:text-[64px] md:leading-[72px] -tracking-[0.02em] mt-4">
-              <span>Dress</span> <span>to</span> <span>Impress</span>
+              <span>The</span> <span>Cosmic</span> <span>Fabric</span>
             </h2>
             <div className="text-small-label font-body uppercase tracking-[0.08em]">
-              moooi presents
+              ECLIPSERA presents
             </div>
           </div>
           <div className="mt-6">
             <p className="text-body-large max-w-[300px]">
-              Elegance and warmth, inspired by perfectly draped fabric.
+            Power and chaos, inspired by the galactic core.
             </p>
           </div>
           <div className="mt-8">
             <span className="font-body text-base border-b border-primary-black pb-1">
-              Explore Drape Light
+              Learn More
             </span>
           </div>
         </Link>
@@ -41,4 +41,4 @@ const DressToImpress = () => {
   );
 };
 
-export default DressToImpress;
+export default StellarShowcase;
